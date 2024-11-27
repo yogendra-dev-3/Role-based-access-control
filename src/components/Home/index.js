@@ -1,22 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./home.css";
-import { localStorageKeys } from "../../constants"; // Assuming this is where you have constants
+import { localStorageKeys, adminDetails } from "../../constants"; // Assuming this is where you have constants
 
 const Home = () => {
   const [user, setUser] = useState(null);
-  const history=useHistory()
-  // fetch user details from local storage
+  const [isAdminUser, setIsAdminUser] = useState(false);
+  const history = useHistory();
+
   useEffect(() => {
     const loggedUser = localStorage.getItem(localStorageKeys.loggedUser);
     if (loggedUser) {
-      setUser(JSON.parse(loggedUser));
+      const userData = JSON.parse(loggedUser);
+      setUser(userData);
+
+      if (
+        userData.username === adminDetails.username &&
+        userData.password === adminDetails.password
+      ) {
+        setIsAdminUser(true);
+      } else {
+        setIsAdminUser(false);
+      }
     }
   }, []);
 
-  const handleUpdatePermissions=()=>{
-    history.push("/dashboard/role-management")
-  }
+  const handleUpdatePermissions = () => {
+    history.push("/dashboard/role-management");
+  };
 
   if (!user) {
     return <p className="error-message">No user is currently logged in.</p>;
@@ -57,9 +68,13 @@ const Home = () => {
         </table>
       </div>
 
-      <div className="action-buttons">
-        <button onClick={handleUpdatePermissions} className="update-btn">Update Permissions</button>
-      </div>
+      {isAdminUser && (
+        <div className="action-buttons">
+          <button onClick={handleUpdatePermissions} className="update-btn">
+            Update Permissions
+          </button>
+        </div>
+      )}
     </div>
   );
 };
