@@ -1,0 +1,101 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px !important;
+    background: #1a1a1a;  /* Dark background */
+    color: #ffffff;        /* White text */
+    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);  /* Neon-like green glow */
+    font-family: 'Roboto', sans-serif;
+    position: sticky;
+    top: 0;
+}
+
+/* Navbar Logo */
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00ff00;  /* Neon green logo */
+}
+
+/* Navbar Links */
+.navbar-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Navbar Link */
+.navbar-link {
+    text-decoration: none;
+    color: #bbbbbb;  /* Light gray text */
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Active Navbar Link */
+.navbar-link.active {
+    color: #00ff00;  /* Neon green for active link */
+    font-weight: bold;
+    border-bottom: 2px solid #00ff00;  /* Underline effect for active link */
+}
+
+/* Navbar Link Hover Effect */
+.navbar-link:hover {
+    color: #00ff00;  /* Neon green on hover */
+    border-bottom: 2px solid #00ff00;  /* Underline effect */
+}
+
+.navbar-link:active {
+    transform: scale(0.95);  /* Shrink effect when clicked */
+    font-weight: bold;
+    color: #ffcc00; /* Highlight color */
+}
+
+/* Login Button */
+.login-btn {
+    padding: 10px 15px;
+    background-color: #00ff00;  /* Neon green */
+    color: #000000;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.4);
+}
+
+.login-btn:active {
+    transform: scale(0.95);
+}
+
+/* Logout Button */
+.logout-btn {
+    padding: 10px 15px;
+    background-color: #ff4c4c;  /* Red color for logout */
+    color: #000000;  /* Black text color */
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.logout-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 76, 76, 0.4);
+    color: #ffffff;  /* White text on hover */
+}
+
+.logout-btn:active {
+    transform: scale(0.95);
+}

@@ -1,0 +1,70 @@
+/* Container for Input Field */
+.textfield-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+/* Label Styles */
+.textfield-container label {
+    font-size: 14px;
+    color: #bbbbbb;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Input Field Styles */
+.textfield-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    background-color: #121212;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.textfield-container input:focus {
+    border-color: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+}
+
+/* Error Message Styles */
+.textfield-container span {
+    color: #ff3f3f; /* Neon-like red */
+    font-size: 12px;
+    text-shadow: 0 0 5px rgba(255, 63, 63, 0.7); /* Subtle glow effect */
+    margin-top: 3px;
+}
+
+/* Wrapper for input and icon */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Input field styles with padding for the icon */
+.input-wrapper input {
+    flex: 1; /* Allows input to take full width */
+    padding-right: 40px; /* Space for the eye icon */
+}
+
+/* Eye icon styles */
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Position the icon inside the input */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #faf7f7;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #00ff00; /* Matches your focus theme */
+}

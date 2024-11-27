@@ -1,0 +1,175 @@
+/* User Management Container */
+.user-management-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: #1a1a1a;  /* Dark background */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);  /* Neon-like green glow */
+  padding: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-management-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00ff00;  /* Neon green title */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Add User Button */
+.add-user-btn {
+  padding: 12px 20px;
+  background-color: #00ff00;  /* Neon green */
+  color: #000000;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.add-user-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0, 255, 0, 0.4);  /* Neon glow on hover */
+}
+
+.add-user-btn:active {
+  transform: scale(0.95);
+}
+
+/* Table Styling */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 15px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.user-table th {
+  background-color: #333333;  /* Dark table header */
+  color: #ffffff;  /* White text for header */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.user-table td {
+  background-color: #444444;  /* Dark rows */
+  color: #bbbbbb;  /* Light gray text for rows */
+}
+
+.user-table tr:hover {
+  background-color: #666666;  /* Hover effect */
+}
+
+.user-table td, .user-table th {
+  border-bottom: 1px solid #555555;  /* Light gray borders */
+}
+
+/* Action Buttons */
+.user-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-action-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #ffcc00;  /* Yellow-orange for edit */
+  color: #000000;
+  font-weight: bold;
+}
+
+.edit-btn:hover {
+  background-color: #f39c12;  /* Hover effect */
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ff4c4c;  /* Red for delete */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background-color: #e74c3c;  /* Darker red on hover */
+}
+
+/* Icon Styling */
+.fas {
+  font-size: 18px;  /* Icon size */
+}
+
+/* ToggleSwitch Styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 50px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #00ff00;  /* Neon green when active */
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);  /* Move toggle handle to the right */
+}
+
+/* Inactive toggle */
+input:not(:checked) + .slider {
+  background-color: #e74c3c;  /* Red when inactive */
+}

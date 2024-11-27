@@ -1,0 +1,76 @@
+
+.login-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 30px;
+    background: #1f1f1f; 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-card label {
+    font-size: 14px;
+    color: #bbbbbb;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Input Field Styles */
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    background-color: #121212; /* Match the theme */
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #00ff00; /* Neon green border */
+    box-shadow: 0 0 5px #00ff00; /* Glow effect */
+}
+
+/* Error Message Styles */
+span {
+    color: #ff4c4c; /* Red for error messages */
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Button Styles */
+button {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #00ff00, #00cc00);
+    color: #000000;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.4);
+}
+
+button:active {
+    transform: scale(0.95);
+}
