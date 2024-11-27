@@ -1,5 +1,4 @@
-/* Toggle Switch Styles */
-.switch {
+/* Toggle Switch Styles */.switch {
     position: relative;
     display: inline-block;
     width: 40px;
@@ -37,27 +36,25 @@
   }
   
   input:checked + .slider {
-    background-color: #00ff00;  /* Green when active */
+    background-color: #00ff00;  
   }
   
   input:checked + .slider:before {
-    transform: translateX(14px);  /* Moves the toggle switch handle */
+    transform: translateX(14px); 
   }
   
-  /* When inactive */
   input:not(:checked) + .slider {
-    background-color: #ff4c4c;  /* Red when inactive */
+    background-color: #ff4c4c;
   }
 
-  /* Toggle Switch Container */
+
 .toggle-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px; /* Space between label and switch */
+  gap: 8px; 
 }
 
-/* Toggle Switch Label */
 .toggle-label {
   font-size: 14px;
   color: #bbbbbb;

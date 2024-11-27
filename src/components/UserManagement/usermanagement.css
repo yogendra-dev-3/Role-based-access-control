@@ -1,15 +1,15 @@
-/* User Management Container */
+
 .user-management-container {
   max-width: 1200px;
   margin: 30px auto;
-  background-color: #1a1a1a;  /* Dark background */
+  background-color: #1a1a1a; 
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);  /* Neon-like green glow */
+  box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3); 
   padding: 30px;
   font-family: 'Roboto', sans-serif;
 }
 
-/* Header */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -20,15 +20,15 @@
 .user-management-title {
   font-size: 28px;
   font-weight: bold;
-  color: #00ff00;  /* Neon green title */
+  color: #00ff00;  
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* Add User Button */
+
 .add-user-btn {
   padding: 12px 20px;
-  background-color: #00ff00;  /* Neon green */
+  background-color: #00ff00; 
   color: #000000;
   border-radius: 5px;
   font-weight: bold;
@@ -39,14 +39,13 @@
 
 .add-user-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 5px 20px rgba(0, 255, 0, 0.4);  /* Neon glow on hover */
+  box-shadow: 0 5px 20px rgba(0, 255, 0, 0.4);  
 }
 
 .add-user-btn:active {
   transform: scale(0.95);
 }
 
-/* Table Styling */
 .user-table {
   width: 100%;
   border-collapse: collapse;
@@ -61,27 +60,27 @@
 }
 
 .user-table th {
-  background-color: #333333;  /* Dark table header */
-  color: #ffffff;  /* White text for header */
+  background-color: #333333;  
+  color: #ffffff;  
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .user-table td {
-  background-color: #444444;  /* Dark rows */
-  color: #bbbbbb;  /* Light gray text for rows */
+  background-color: #444444; 
+  color: #bbbbbb; 
 }
 
 .user-table tr:hover {
-  background-color: #666666;  /* Hover effect */
+  background-color: #666666;  
 }
 
 .user-table td, .user-table th {
-  border-bottom: 1px solid #555555;  /* Light gray borders */
+  border-bottom: 1px solid #555555;  
 }
 
-/* Action Buttons */
+
 .user-action-btns {
   display: flex;
   align-items: center;
@@ -96,20 +95,18 @@
   transition: background-color 0.3s ease;
 }
 
-/* Edit Button */
 .edit-btn {
-  background-color: #ffcc00;  /* Yellow-orange for edit */
+  background-color: #ffcc00; 
   color: #000000;
   font-weight: bold;
 }
 
 .edit-btn:hover {
-  background-color: #f39c12;  /* Hover effect */
+  background-color: #f39c12; 
 }
 
-/* Delete Button */
 .delete-btn {
-  background-color: #ff4c4c;  /* Red for delete */
+  background-color: #ff4c4c; 
   color: #ffffff;
   font-weight: bold;
 }
@@ -123,53 +120,37 @@
   font-size: 18px;  /* Icon size */
 }
 
-/* ToggleSwitch Styling */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 34px;
-  height: 20px;
+/* Status Styling */
+.status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center; /* Adjust as needed */
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.status.active {
+  color: #ffffff;
+  background-color: #00ff00; /* Neon green for Active */
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.6); /* Glow effect */
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 50px;
+.status.inactive {
+  color: #ffffff;
+  background-color: #e74c3c; /* Red for Inactive */
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.6); /* Glow effect */
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 12px;
-  width: 12px;
-  border-radius: 50px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
+.empty-screen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+  align-items: center;
+  background-color: #333333; 
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);  
+  padding: 30px;
+  text-align: center;
+  color: rgb(159, 157, 157);
 }
 
-input:checked + .slider {
-  background-color: #00ff00;  /* Neon green when active */
-}
-
-input:checked + .slider:before {
-  transform: translateX(14px);  /* Move toggle handle to the right */
-}
-
-/* Inactive toggle */
-input:not(:checked) + .slider {
-  background-color: #e74c3c;  /* Red when inactive */
-}

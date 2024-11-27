@@ -1,0 +1,96 @@
+
+.role-modal-header {
+    background-color: #121212;
+    border-bottom: 1px solid #333;
+  }
+  
+  .role-modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ff00; 
+  }
+  
+  .role-modal-form {
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #1f1f1f;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    gap: 10px;
+    color: #ffffff; 
+  }
+  
+  .checkbox-input {
+    accent-color: #00ff00;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .error-message {
+    color: #ff4c4c;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .role-modal-footer {
+    background-color: #121212 !important;
+    border-top: 1px solid #333;
+    justify-content: flex-end; 
+  }
+  
+  .role-modal-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #00ff00, #00cc00);
+    color: #000000; 
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .role-modal-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.4);
+  }
+  
+  .role-modal-button:active {
+    transform: scale(0.95);
+  }
+  
+
+.role-container {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+/* Styling for the "Role" label */
+.role-label {
+  font-size: 1.1rem;
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* Styling for the role name (the value of roleName) */
+.role-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color:white;
+  margin-top: 5px;
+}
+
+/* Styling for the "Permissions" label */
+.permissions-label {
+  font-size: 1.1rem;
+    color: #00ff00;
+    font-weight: bold;
+  margin-top: 10px;
+}
+

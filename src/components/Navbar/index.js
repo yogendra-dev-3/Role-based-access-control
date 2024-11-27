@@ -1,30 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import "./navbar.css";
 import { getData } from "../../helper";
-import { localStorageKeys } from "../../constants";
+import { localStorageKeys, adminDetails } from "../../constants";
 import CommonModal from "../common/CommonModal";
 
 const Navbar = () => {
   const history = useHistory();
-  const location = useLocation(); // Get the current route
-  const isAuthenticated = getData(localStorageKeys.loggedUser);
+  const location = useLocation();
 
+  const isAuthenticated = getData(localStorageKeys.loggedUser);
+  
   const [showlogout, setShowlogout] = useState(false);
+  const [isAdminUser, setIsAdminUser] = useState(false);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      const user = JSON.parse(localStorage.getItem(localStorageKeys.loggedUser));
+      const { username, password } = user;
+      if (username === adminDetails.username && password === adminDetails.password) {
+        setIsAdminUser(true);
+      } else {
+        setIsAdminUser(false);
+      }
+    }
+  }, [isAuthenticated]);
 
   const handleLogout = () => {
-    // remove user from localStorage to log out
     localStorage.removeItem(localStorageKeys.loggedUser);
-    history.push("/login"); // redirect to login page after logging out
+    history.push("/login");
   };
 
-  // Function to check if the current link is active
   const isActive = (path) => (location.pathname === path ? "active" : "");
 
   return (
     <>
       <nav className="navbar">
-        <div className="navbar-logo">RBAC</div>
+        <div className="navbar-logo" onClick={()=>history.push("/dashboard/home")}>RBAC</div>
         <div className="navbar-links">
           <Link
             className={`navbar-link ${isActive("/dashboard/home")}`}
@@ -38,12 +50,15 @@ const Navbar = () => {
           >
             User Management
           </Link>
-          <Link
-            className={`navbar-link ${isActive("/dashboard/role-management")}`}
-            to="/dashboard/role-management"
-          >
-            Role Management
-          </Link>
+          
+          {isAdminUser && (
+            <Link
+              className={`navbar-link ${isActive("/dashboard/role-management")}`}
+              to="/dashboard/role-management"
+            >
+              Role Management
+            </Link>
+          )}
 
           {isAuthenticated ? (
             <button
@@ -62,12 +77,12 @@ const Navbar = () => {
 
       {showlogout && (
         <CommonModal
-          title="Are you sure want to logout ?"
-          content="logut"
+          title="Logout"
+          content="Are you sure you want to logout?"
           show={showlogout}
           handleClose={() => setShowlogout(false)}
-          handlesubmit={handleLogout}
-          btnText="logout"
+          handleSubmit={handleLogout}
+          btnText="Logout"
         />
       )}
     </>

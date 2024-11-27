@@ -1,4 +1,4 @@
-/* Container for Input Field */
+
 .textfield-container {
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@
     width: 100%;
 }
 
-/* Label Styles */
+
 .textfield-container label {
     font-size: 14px;
     color: #bbbbbb;
@@ -14,7 +14,7 @@
     font-weight: bold;
 }
 
-/* Input Field Styles */
+
 .textfield-container input {
     width: 100%;
     padding: 10px;
@@ -32,31 +32,30 @@
     box-shadow: 0 0 5px #00ff00;
 }
 
-/* Error Message Styles */
+
 .textfield-container span {
-    color: #ff3f3f; /* Neon-like red */
+    color: #ff3f3f; 
     font-size: 12px;
-    text-shadow: 0 0 5px rgba(255, 63, 63, 0.7); /* Subtle glow effect */
+    text-shadow: 0 0 5px rgba(255, 63, 63, 0.7); 
     margin-top: 3px;
 }
 
-/* Wrapper for input and icon */
+
 .input-wrapper {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-/* Input field styles with padding for the icon */
 .input-wrapper input {
-    flex: 1; /* Allows input to take full width */
-    padding-right: 40px; /* Space for the eye icon */
+    flex: 1;
+    padding-right: 40px;
 }
 
-/* Eye icon styles */
+
 .toggle-password {
     position: absolute;
-    right: 10px; /* Position the icon inside the input */
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -66,5 +65,5 @@
 }
 
 .toggle-password:hover {
-    color: #00ff00; /* Matches your focus theme */
+    color: #00ff00; 
 }

@@ -28,32 +28,29 @@
     font-weight: bold;
 }
 
-/* Input Field Styles */
 input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #333333;
-    background-color: #121212; /* Match the theme */
+    background-color: #121212; 
     color: #ffffff;
     outline: none;
     transition: all 0.3s ease;
 }
 
 input:focus {
-    border-color: #00ff00; /* Neon green border */
-    box-shadow: 0 0 5px #00ff00; /* Glow effect */
+    border-color: #00ff00; 
+    box-shadow: 0 0 5px #00ff00;
 }
 
-/* Error Message Styles */
 span {
-    color: #ff4c4c; /* Red for error messages */
+    color: #ff4c4c; 
     font-size: 12px;
     margin-top: 5px;
 }
 
-/* Button Styles */
 button {
     padding: 10px;
     font-size: 16px;

@@ -1,33 +1,31 @@
-/* Modal Container */
+
 .custom-modal .modal-content {
-    background-color: #1f1f1f; /* Dark theme background */
+    background-color: #1f1f1f; 
     border-radius: 10px;
     border: 1px solid #333;
 }
 
-/* Header Styling */
 .custom-modal-header {
-    background-color: #121212; /* Darker header background */
+    background-color: #121212; 
     border-bottom: 1px solid #333;
 }
 
 .custom-modal-title {
     font-size: 14px;
     font-weight: bold;
-    color: #00ff00; /* Neon green */
+    color: #00ff00;
 }
 
-/* Body Styling */
+
 .custom-modal-body {
-    background-color: #1f1f1f; /* Match content background with the modal */
+    background-color: #1f1f1f; 
     padding: 20px;
-    color: #ffffff; /* White text for readability */
+    color: #ffffff; 
     font-size: 1rem;
 }
 
-/* Footer Styling */
 .custom-modal-footer {
-    background-color: #121212; /* Darker footer background */
+    background-color: #121212;
     border-top: 1px solid #333;
     padding: 15px;
     display: flex;
@@ -35,22 +33,21 @@
     gap: 10px;
 }
 
-/* Button Styling */
 .custom-modal-button {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(90deg, #00ff00, #00cc00); /* Neon green gradient */
-    color: #000000; /* Black text for contrast */
+    background: linear-gradient(90deg, #00ff00, #00cc00);
+    color: #000000;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .custom-modal-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.4); /* Neon green glow */
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.4);
 }
 
 .custom-modal-button:active {
@@ -58,14 +55,14 @@
 }
 
 .cancel-btn {
-    background: linear-gradient(90deg, #ff4c4c, #cc0000); /* Red gradient for cancel */
+    background: linear-gradient(90deg, #ff4c4c, #cc0000);
     color: #ffffff;
 }
 
 .cancel-btn:hover {
-    box-shadow: 0 5px 20px rgba(255, 76, 76, 0.4); /* Red glow */
+    box-shadow: 0 5px 20px rgba(255, 76, 76, 0.4); 
 }
 
 .submit-btn {
-    background: linear-gradient(90deg, #00ff00, #00cc00); /* Submit matches main button style */
+    background: linear-gradient(90deg, #00ff00, #00cc00); 
 }

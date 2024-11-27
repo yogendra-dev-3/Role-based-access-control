@@ -1,0 +1,48 @@
+
+.selectfield-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+  
+
+  .selectfield-container label {
+    font-size: 14px;
+    color: #bbbbbb;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+
+  .select-wrapper select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    background-color: #121212;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .select-wrapper select:focus {
+    border-color: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  
+
+  .selectfield-container span {
+    color: #ff3f3f;
+    font-size: 12px;
+    text-shadow: 0 0 5px rgba(255, 63, 63, 0.7);
+    margin-top: 3px;
+  }
+  
+  .select-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
