@@ -1,67 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./usermanagement.css";
 import { PencilSimple, Trash } from "phosphor-react";
 import AddUserModal from "../AddModal";
-import { localStorageKeys } from "../../constants";
+import { AppContext } from "../../context/contex";
+
+const roles={
+  1:"Admin",
+  2:"Manager",
+  3:"User"
+}
 
 const UserManagement = () => {
-  const [users, setUsers] = useState([]);
+  const { usersList, updateUsersList } = useContext(AppContext);
   const [showModal, setShowModal] = useState(false);
-  const [userId, setUserId] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
 
-  useEffect(() => {
-    const usersList =
-      JSON.parse(localStorage.getItem(localStorageKeys.usersList)) || [];
-    setUsers(usersList);
-  }, []);
-
   const handleAddUser = () => {
-    setUserId(null); // Reset userId for adding a new user
-    setCurrentUser(null); // No current user data
+    setCurrentUser(null);
     setShowModal(true);
   };
 
   const handleEditUser = (id) => {
-    const userToEdit = users.find((user) => user.id === id);
-    setUserId(id);
+    const userToEdit = usersList.find((user) => user.id === id);
     setCurrentUser(userToEdit);
     setShowModal(true);
   };
 
   const handleDeleteUser = (id) => {
-    const updatedUsers = users.filter((user) => user.id !== id);
-    setUsers(updatedUsers);
-    localStorage.setItem(
-      localStorageKeys.usersList,
-      JSON.stringify(updatedUsers)
-    );
+    const updatedUsers = usersList.filter((user) => user.id !== id);
+    updateUsersList(updatedUsers);
   };
 
   const handleSaveUser = (data) => {
-    let updatedUsers;
-    if (userId) {
-        // Edit user
-        updatedUsers = users.map((user) =>
-            user.id === userId ? { ...user, ...data } : user
-        );
-    } else {
-        const newUser = {
-            id: users.length + 1,
-            ...data,
-            roleId: data.roleId,
-        };
-        updatedUsers = [...users, newUser];
-    }
-    setUsers(updatedUsers);
-    localStorage.setItem(localStorageKeys.usersList, JSON.stringify(updatedUsers));
+    const updatedUsers = currentUser
+      ? usersList.map((user) =>
+          user.id === currentUser.id ? { ...user, ...data } : user
+        )
+      : [...usersList, { id: usersList.length + 1, ...data }];
+    updateUsersList(updatedUsers);
     setShowModal(false);
-};
+  };
 
 
   return (
     <>
-      {users.length > 0 ? (
+      {usersList.length > 0 ? (
         <div className="user-management-container">
           <div className="header">
             <h1 className="user-management-title">User Management</h1>
@@ -76,16 +59,18 @@ const UserManagement = () => {
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Role</th>
                 <th>Status</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {users.map((user) => (
+              {usersList.map((user) => (
                 <tr key={user.id}>
                   <td>{user.id}</td>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
+                  <td>{roles[user.roleId]}</td>
                   <td>
                     <span
                       className={`status ${

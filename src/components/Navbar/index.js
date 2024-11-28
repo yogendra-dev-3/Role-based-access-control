@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import "./navbar.css";
 import { getData } from "../../helper";
-import { localStorageKeys, adminDetails } from "../../constants";
+import { localStorageKeys, adminDetails, defaultRolesData } from "../../constants";
 import CommonModal from "../common/CommonModal";
+import { AppContext } from "../../context/contex";
 
 const Navbar = () => {
   const history = useHistory();
   const location = useLocation();
+
+  const {usersList,rolesList}=useContext(AppContext)
 
   const isAuthenticated = getData(localStorageKeys.loggedUser);
   
@@ -28,6 +31,10 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem(localStorageKeys.loggedUser);
+    localStorage.setItem(localStorageKeys.usersList,JSON.stringify(usersList))
+    const rolesData=rolesList.length>0 ? rolesList : defaultRolesData
+    console.log(rolesData,"rolesData")
+    localStorage.setItem(localStorageKeys.rolesList,JSON.stringify(rolesData))
     history.push("/login");
   };
 

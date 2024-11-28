@@ -1,45 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { PencilSimple } from "phosphor-react";
 import RoleEditModal from "../RoleEditModal";
 import "./rolemanagement.css"; // Assuming custom styling file
+import { AppContext } from "../../context/contex";
 
-const defaultRolesData = [
-  {
-    id: 1,
-    name: "Admin",
-    permissions: { read: true, write: true, delete: true },
-  },
-  {
-    id: 2,
-    name: "Manager",
-    permissions: { read: true, write: true, delete: false },
-  },
-  {
-    id: 3,
-    name: "User",
-    permissions: { read: true, write: false, delete: false },
-  },
-];
 
 const RoleManagement = () => {
+  const { rolesList, updateRolesList } =useContext(AppContext);
   const [showEditModal, setShowEditModal] = useState(false);
-  const [rolesList, setRolesList] = useState(defaultRolesData);
   const [selectedRole, setSelectedRole] = useState(null);
 
   const handleSave = (updatedPermissions) => {
-    setRolesList((prevRoles) =>
-      prevRoles.map((role) =>
-        role.id === selectedRole.id
-          ? { ...role, permissions: updatedPermissions }
-          : role
-      )
+    const updatedRoles = rolesList.map((role) =>
+      role.id === selectedRole.id
+        ? { ...role, permissions: updatedPermissions }
+        : role
     );
-    setShowEditModal(false); 
+    updateRolesList(updatedRoles);
+    setShowEditModal(false);
   };
 
   const handleEditRole = (role) => {
     setSelectedRole(role);
-    setShowEditModal(true); 
+    setShowEditModal(true);
   };
 
   return (
